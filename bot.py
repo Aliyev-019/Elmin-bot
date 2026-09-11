@@ -15,7 +15,7 @@ async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     messages=[{"role": "user", "content": user_text}]
   ) 
   await update.message.reply_text(completion.choices[0].message.content)
-if name == 'main': 
+if __name__ == '__main__': 
   app = ApplicationBuilder().token(TELEGRAM_TOKEN).build() 
   app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, reply))
   app.run_polling()
