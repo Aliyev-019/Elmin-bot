@@ -20,7 +20,7 @@ client = Groq(api_key=GROQ_API_KEY)
 # Groq AI cavabı
 def get_ai_response(text):
     completion = client.chat.completions.create(
-        model="qwen-2.5-32b",
+        model="llama-3.3-70b-versatile",
         messages=[{"role": "user", "content": text}]
     )
     return completion.choices[0].message.content
